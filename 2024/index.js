@@ -16,15 +16,9 @@ listB.sort((a, b) => a - b);
 
 
 let sum = 0;
-
-for(let i = 0; i < listA.length; i++) {
-  if(listA[i] > listB[i]) {
-    sum += listA[i] - listB[i];
-  }
-  else {
-    sum += listB[i] - listA[i];
-  }
-}
-
+listA.forEach((n) => {
+  const count = listB.filter((x) => x === n).length;
+  sum += n * count;
+});
 
 console.log(sum);
